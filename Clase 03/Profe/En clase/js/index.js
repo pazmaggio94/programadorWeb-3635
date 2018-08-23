@@ -88,5 +88,8 @@ console.log('Init app')
   for (var i = 0; i < pokemons.length; i++) {
     pokemon = pokemons[i]
 
-    console.log('Nombre: ' + pokemon.name, 'Tipo: ' + pokemon.type)
-  }
+
+  console.log('Nombre: ' + pokemon.name, 'Tipo: ' + pokemon.type)
+}
+
+
