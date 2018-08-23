@@ -1,0 +1,6 @@
+console.log('Init app')
+
+var firstName = prompt ('Ingresá tu nombre')
+
+var message = 'Bienvenido' + firstName + ', qué contas de nuevo?' 
+

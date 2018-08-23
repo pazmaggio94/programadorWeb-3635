@@ -140,7 +140,7 @@ var age = prompt('Ingresá tu edad')
 //   }
 // }
 
-if (age >= 18) {
+//if (age >= 18) {
   var gameResult = prompt('Como salió el partido? Ganó, Perdió, Empató')
 
   switch (gameResult) {
@@ -160,4 +160,4 @@ if (age >= 18) {
       console.log('Resultado incorrecto')
       break
   }
-}
+

@@ -11,19 +11,19 @@ console.log('Init app')
 // console.log(9)
 // console.log(10)
 
-// While
+ //While
 
-// var counter = 1
+ // var counter = 1
 
-// while (counter <= 20) {
-//   console.log(counter)
+ // while (counter <= 20) {
+ //   console.log(counter)
 
-//   if (counter === 11) {
-//     console.log('Soy de once!')
-//   }
+ //  if (counter === 11) {
+ //     console.log('Soy de once!')
+ //   }
 
-//   counter = counter + 1
-// }
+ //   counter = counter + 1
+ // }
 
 // Do while
 
@@ -67,26 +67,26 @@ console.log('Init app')
 //   console.log(color)
 // }
 
-var pokemons = [
-  {
-    name: 'bulbasaur',
-    type: 'Planta'
-  },
-  {
-    name: 'charmander',
-    type: 'Fuego'
-  },
-  {
-    name: 'squartle'
+  var pokemons = [
+    {
+      name: 'bulbasaur',
+      type: 'Planta'
+    },
+    {
+      name: 'charmander',
+      type: 'Fuego'
+    },
+    {
+      name: 'squartle'
+    }
+  ]
+
+  var pokemon
+
+  console.log('Los pokémon que me acuerdo son los siguientes: ')
+
+  for (var i = 0; i < pokemons.length; i++) {
+    pokemon = pokemons[i]
+
+    console.log('Nombre: ' + pokemon.name, 'Tipo: ' + pokemon.type)
   }
-]
-
-var pokemon
-
-console.log('Los pokémon que me acuerdo son los siguientes: ')
-
-for (var i = 0; i < pokemons.length; i++) {
-  pokemon = pokemons[i]
-
-  console.log('Nombre: ' + pokemon.name, 'Tipo: ' + pokemon.type)
-}
