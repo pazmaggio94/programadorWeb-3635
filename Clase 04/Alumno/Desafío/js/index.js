@@ -25,18 +25,41 @@ var studentsList = [
   }
 ]
 
-function showResult (studentsList) {
-var index = -1
+
+
+function showStudent (text, studentsList) {
+
 var student 
 
 	for (var i = 0; i < studentsList.length; i++) {
 	student = studenstList[i]
 
-    return index
-	}
+	if(text === student.firstName || text === student.lastName){
+		
+		return i
+	} }
 
-	if(name === student[i].firstName){
-		console.log('Se encontró el alumno en la posición '+ i)
-	}else{
-		console.log('No se encontró el nombre del alumno ')
-	} } 
+	return -1
+
+    } 
+
+var text = 'Juan'
+
+var result = showStudent(text, studentsList)
+
+if result = showStudent ()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
