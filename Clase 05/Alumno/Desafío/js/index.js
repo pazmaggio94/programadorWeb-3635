@@ -1,11 +1,10 @@
 console.log('Init app')
 
-var students //hacer array con 
 
 function Student (firstName, lastName, dni, email) {
-	var id = Math.random()
+	
+	var id = Math.random() //o var id = dni (podria ser)
 
-  // Cuerpo de la función
   this.firstName = firstName
   this.lastName = lastName
   this.dni = dni
@@ -19,27 +18,41 @@ function Student (firstName, lastName, dni, email) {
   	if (this.fistName && this.lastName) {
   		return this.firstName + ' ' + this.lastName
   	} else if (this.firstName && !this.lastName) {
-  		return !this.firstName + ' ' + this.lastName
-  	} 
-    
+  		return this.firstName
+  	} else if ( !this.firstName && this.lastName) {
+  		return this.lastName
+  	} else {
+  		return ''
+  	}
+   }
   }
 
-}
 
+var oldStudents = [
+	{ firstName: 'Juan', lastName: 'Pérez', dni: 45678989, email: 'juan@gmail.com' },
+
+	{ firstName: 'Ana', lastName: 'Fernandez', dni: 45678987 , email: 'ana@gmail.com' },
+
+	{ firstName: 'Juan', lastName: 'Pérez', dni: 45678956, email: 'pedro@gmail.com'}
+	
+	]
+
+
+var oldStudent
 
 var newStudent
 
-var newStudent1 = new Student('Pepe', 'Perez', 45678989, 'juan@gmail.com')
+for (var i = 0; i < oldStudents.length; i++) {
+	oldStudent = oldStudents[i]
+	newStudent = new Student (
+		oldStudent.firstName,
+		oldStudent.lastName,
+		oldStudent.dni,
+		oldStudent.email
+		)
 
-console.log(newStudent1, newStudent1.getId())
+	console.log(newStudent.getId(), newStudent.getFullName())
 
+}
 
-var newStudent2 = new Student('Ana', 'Fernandez',45678987, 'ana@gmail.com')
-
-console.log(newStudent2, newStudent2.getId())
-
-
-var newStudent3 = new Student('Pedro', 'Mármol', 45678956, 'pedro@gmail.com')
-
-console.log(newStudent3, newStudent3.getId())
 
