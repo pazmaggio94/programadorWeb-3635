@@ -1,14 +1,15 @@
 console.log('Init app')
 
 
-var savedStudentsList = localStorage.getItem('studentsList')
-
 var testList = ['CARLOS','GERONIMO','NICOLAS','LUCAS']
 
-var stringyTestList = JSON.stringify(testList)
+function setLocalList (key, list) {
+	if (typeof key === 'string' && Array.isArray(list)) {
+		
+		var strList = JSON.stringify(list)
 
-var parsedTestList = JSON.parse(stringyTestList)
+		localStorage.setItem(key,strList)
+	}
+}
 
-localStorage.setItem('studentsList', testList)
-
-console.log(parsedTestList)
+setLocalList('testList', testList)
