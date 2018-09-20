@@ -92,24 +92,11 @@ function validateDeleteDniField(event) {
   // if (isNaN(parsedValue) || parsedValue <= 0 || index > -1)
 
   if (index > -1) {
-    inputNode.classList.remove('is-invalid')
-    inputNode.classList.add('is-valid')
-  } else {
-    inputNode.classList.remove('is-valid')
-    inputNode.classList.add('is-invalid')
-  }
-  validateDeleteButton()
-}
-
-function validateDeleteButton() {
-  var deleteStudentButtonNode = document.getElementById('deleteStudentButton')
-  var deleteDniFields = document.getElementsByClassName('is-valid')
-
-  // que condicion poner? 
-  if (deleteDniFields.length === 2) {
-    deleteStudentButtonNode.disabled = true
-  } else {
+    // Habilitamos el botón
     deleteStudentButtonNode.disabled = false
+  } else {
+    // Deshabilitar el botón
+    deleteStudentButtonNode.disabled = true
   }
 }
 
@@ -136,9 +123,8 @@ function deleteStudent() {
 
   mainListNode.removeChild(node)
 
-  dniNode.value = ''
+  deleteDniNode.value = ''
   deleteStudentButtonNode.disabled = true
-  deleteDniNode.classList.remove('is-valid')
 }
 
 // buscar estudiante
@@ -159,9 +145,9 @@ function searchStudentIndexByText(text, studentsList) {
 }
 
 function includesText(text, baseText) {
-  // Valido que ambos parámetros sean string
+
   if (typeof text === 'string' && typeof baseText === 'string') {
-    // Verifico si el primer parámetro se encuentra dentro del segundo
+
     var textUpperCase = text.toUpperCase()
     var baseTextUpperCase = baseText.toUpperCase()
     if (baseTextUpperCase.indexOf(textUpperCase) !== -1) {
@@ -174,17 +160,29 @@ function includesText(text, baseText) {
   }
 }
 
-var searchStudentListNode = document.getElementById('searchList')
+var searchStudentButtonNode = document.getElementById('searchStudentButton')
 
-var student
+searchStudentButtonNode.onclick = searchStudent
 
+function searchStudent(event) {
 
+  var searchStudentNode = document.getElementById('searchText')
 
+  var searchListNode = document.getElementById('searchList')
 
+  var index = searchStudentIndexByText(searchStudentNode.value, studentsList)
 
+  var student = studentsList[index]
 
+  searchListNode.innerHTML = ''
 
+  if (student) {
 
+    var studentNode = createStudentNode(student)
+
+    searchListNode.appendChild(studentNode)
+  }
+}
 
 // Funciones auxiliares
 
