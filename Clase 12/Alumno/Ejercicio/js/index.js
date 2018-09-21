@@ -1,13 +1,20 @@
 console.log('Init App')
 
-var divNode = $('square')
+var divNode = $('squaresContainer')
 
 divNode.click (toggle)
 
 var player = true
 
 function toggle () {
-    if (player) {
-        inputNode
+    var divNode = $(this)
+
+    if (player) { 
+        divNode.toggleClass('.circle')
+        player = false
+    } else {
+        divNode.toggleClass('.cross')
+        player = true
     }
 }
+
